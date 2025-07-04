@@ -74,7 +74,7 @@ export function VaccinationTable({ vaccinations, onMarkComplete, onDelete }: Pro
         </tr>
       </thead>
       <tbody>
-        {vaccinations.map(vac => {
+        {Array.isArray(vaccinations) && vaccinations.map(vac => {
           const status = getStatus(new Date(vac.dueDate));
           const isOverdue = status === 'over due';
           const isEditing = editingRowId === vac.id;

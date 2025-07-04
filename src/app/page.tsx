@@ -27,8 +27,13 @@ export default function Home() {
   const fetchVaccinations = async () => {
     setLoading(true);
     const res = await fetch('/api/vaccinations');
-    const data = await res.json();
-    setVaccinations(data);
+    let data;
+    try {
+      data = await res.json();
+    } catch {
+      data = [];
+    }
+    setVaccinations(Array.isArray(data) ? data : []);
     setLoading(false);
   };
 
