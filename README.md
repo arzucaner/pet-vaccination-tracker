@@ -70,6 +70,12 @@ A modern, full-stack web application to track pet vaccinations. Built with:
 
 ---
 
+## 🔗 Live Demo
+
+Check out the deployed app here:
+
+👉 [https://pet-vaccination-tracker.vercel.app/](https://pet-vaccination-tracker.vercel.app/)
+
 ## 📸 Screenshots
 
 Here’s a preview of the responsive UI and features:
