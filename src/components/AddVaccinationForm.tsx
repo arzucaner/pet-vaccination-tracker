@@ -21,7 +21,7 @@ export default function AddVaccinationForm({ onAdd }: { onAdd: () => void }) {
       setName('');
       setDueDate('');
       onAdd();
-    } catch (err) {
+    } catch {
       setError('Failed to add vaccination');
     } finally {
       setLoading(false);
