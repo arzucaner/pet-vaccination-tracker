@@ -8,7 +8,7 @@ export async function GET() {
       orderBy: { dueDate: 'asc' },
     });
     return NextResponse.json(vaccinations);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch vaccinations' }, { status: 500 });
   }
 }
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       },
     });
     return NextResponse.json(vaccination, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to create vaccination' }, { status: 500 });
   }
 }
@@ -45,7 +45,7 @@ export async function PATCH(req: NextRequest) {
       },
     });
     return NextResponse.json(vaccination);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to update vaccination' }, { status: 500 });
   }
 }
@@ -58,7 +58,7 @@ export async function DELETE(req: NextRequest) {
     }
     await prisma.vaccination.delete({ where: { id } });
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to delete vaccination' }, { status: 500 });
   }
 } 
