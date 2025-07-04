@@ -29,30 +29,32 @@ export default function AddVaccinationForm({ onAdd }: { onAdd: () => void }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-      <input
-        type="text"
-        placeholder="Vaccination Name"
-        value={name}
-        onChange={e => setName(e.target.value)}
-        className="border rounded px-2 py-1"
-        required
-      />
-      <input
-        type="date"
-        value={dueDate}
-        onChange={e => setDueDate(e.target.value)}
-        className="border rounded px-2 py-1"
-        required
-      />
-      <button
-        type="submit"
-        className="bg-[#144C4C] text-white px-4 py-2 rounded-full mt-2"
-        disabled={loading}
-      >
-        {loading ? 'Adding...' : 'Add Vaccination'}
-      </button>
-      {error && <span className="text-red-500 text-sm">{error}</span>}
-    </form>
+    <div className="max-w-xl mx-auto px-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+        <input
+          type="text"
+          placeholder="Vaccination Name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          className="border rounded px-2 py-1"
+          required
+        />
+        <input
+          type="date"
+          value={dueDate}
+          onChange={e => setDueDate(e.target.value)}
+          className="border rounded px-2 py-1"
+          required
+        />
+        <button
+          type="submit"
+          className="bg-[#144C4C] text-white px-4 py-2 rounded-full mt-2"
+          disabled={loading}
+        >
+          {loading ? 'Adding...' : 'Add Vaccination'}
+        </button>
+        {error && <span className="text-red-500 text-sm">{error}</span>}
+      </form>
+    </div>
   );
 } 
